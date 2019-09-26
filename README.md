@@ -26,5 +26,5 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ## Usage
-Type topics or kwywords in Search bar.
+Type topics or keywords in Search bar.
 
