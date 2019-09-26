@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard/BookCard'
 import { Icon,Input } from 'semantic-ui-react';
-import {Loader,Grid,Card,Message} from 'semantic-ui-react';
+import {Loader,Grid,Card,Message,Header} from 'semantic-ui-react';
 import * as actionCreators from '../store/actions/bookSearch'
 import styles from './bookSearch.module.css';
 import { withWindowSizeListener } from 'react-window-size-listener';
@@ -59,10 +59,18 @@ return <Message negative ><Message.Header>{`Error: Cannot get book results `}</M
     return (
     
     <Grid>
-
+      <Grid.Row className ={[styles.content,styles.main].join(' ')}>
+      <Grid.Column textAlign='center'>
+      <Icon style={{'font-size': '3vw'}} color='teal' name='book' />
+      <Header style={{'font-size': '3vw'}} as='huge' >
+      Book Finder
+    </Header>
+      </Grid.Column>
+    </Grid.Row>
+      
     <Grid.Row className ={[styles.content,styles.main].join(' ')}>
-      <Grid.Column textAlign="center">
-      <Input
+      <Grid.Column textAlign="center" className ={styles.padding}>
+      <Input 
       size='massive'  
       onChange = {(event) => this.updateSearchTerm(event.target.value)}
       icon={<Icon name='search' type = 'submit' onClick ={() => this.processSearch(this.state.searchTerm)} inverted circular link />}

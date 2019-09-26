@@ -4,9 +4,9 @@ Book-Finder helps you find your favorite book.
 ### Website https://amiable-evening-252417.firebaseapp.com/
 
 ## Requirements
-* Node.js
-* yarn
-* React
+* [Node.js](https://nodejs.org/en/)
+* [yarn](https://yarnpkg.com/en/)
+* [React](https://reactjs.org/)
 
 ## Installation
 
