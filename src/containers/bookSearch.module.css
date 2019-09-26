@@ -1,0 +1,12 @@
+.content {
+    max-width: 2000px;
+    margin: auto;
+  }
+.main {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
