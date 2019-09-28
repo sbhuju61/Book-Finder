@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import BookCard from '../components/BookCard/BookCard'
-import { Icon,Input } from 'semantic-ui-react';
-import {Loader,Grid,Card,Message,Header} from 'semantic-ui-react';
-import * as actionCreators from '../store/actions/bookSearch'
+import BookCard from '../components/BookCard/BookCard';
+import {Icon,Input,Loader,Grid,Card,Message,Header,Segment} from 'semantic-ui-react';
+import * as actionCreators from '../store/actions/bookSearch';
 import styles from './bookSearch.module.css';
 import { withWindowSizeListener } from 'react-window-size-listener';
 
@@ -47,29 +46,31 @@ cardRows = () => {
   }
 return "3";
 }
+
 renderErrorMessage = () => {
 if (this.props.error){
 return <Message negative ><Message.Header>{`Error: Cannot get book results `}</Message.Header></Message>
 }
 }
 
-
-  render() {
+render() {
     //()
     return (
-    
-    <Grid>
-      <Grid.Row className ={[styles.content,styles.main].join(' ')}>
-      <Grid.Column textAlign='center'>
-      <Icon style={{'font-size': '3vw'}} color='teal' name='book' />
-      <Header style={{'font-size': '3vw'}} as='huge' >
-      Book Finder
-    </Header>
+      <Segment style={{ padding: '4em 0em' }} vertical>
+    <Grid centered>
+      <Grid.Row className={styles.content}  >
+      <Grid.Column >
+      
+      <Header style={{'fontSize': '4em'}} textAlign='center' as='h1' >
+      <Icon  color='teal' name='book' /> 
+    Book Finder
+      </Header>
+
       </Grid.Column>
     </Grid.Row>
       
-    <Grid.Row className ={[styles.content,styles.main].join(' ')}>
-      <Grid.Column textAlign="center" className ={styles.padding}>
+    <Grid.Row className={styles.content}>
+      <Grid.Column textAlign="center" >
       <Input 
       size='massive'  
       onChange = {(event) => this.updateSearchTerm(event.target.value)}
@@ -79,12 +80,12 @@ return <Message negative ><Message.Header>{`Error: Cannot get book results `}</M
       </Grid.Column>
     </Grid.Row>
 
-    <Grid.Row >
-      <Grid.Column  className ={styles.content}>
+    <Grid.Row className={styles.content} style={{ padding: '0em 4em' }}>
+      <Grid.Column >
       
-        <Loader size = 'massive' content ='Loading...' className ={this.props.loading}/>
+        <Loader  size = 'massive' content ='Loading...' className ={this.props.loading}/>
         {this.renderErrorMessage()}
-      <Card.Group itemsPerRow={this.cardRows()}  className ={styles.padding}>
+      <Card.Group itemsPerRow={this.cardRows()}  >
         {this.renderBookCard(this.props.BookInfos)
         }
         </Card.Group>
@@ -96,6 +97,7 @@ return <Message negative ><Message.Header>{`Error: Cannot get book results `}</M
     </Grid.Row>
 
       </Grid>
+      </Segment>
   );
     }
 };
