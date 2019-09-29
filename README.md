@@ -3,6 +3,15 @@ Book-Finder helps you find your favorite book.
 
 ### Website https://amiable-evening-252417.firebaseapp.com/
 
+### Info
+* Used local and global state combination to create app.
+* Used **react-redux** and **react-thunk** to handle asynchronous code.   
+* Fetched book data using **RESTFUL API** from the Google Book API.
+* Used **Semantic UI**, **CSS3** and  react-window-size-listener for responsive website.
+
+## Tech Stack
+ React, React-Redux, React-thunk, Semantic UI React, Git and Google Book API
+
 ## Requirements
 * [Node.js](https://nodejs.org/en/)
 * [yarn](https://yarnpkg.com/en/)
@@ -27,4 +36,6 @@ You will also see any lint errors in the console.
 
 ## Usage
 Type topics or keywords in Search bar.
+
+
 
